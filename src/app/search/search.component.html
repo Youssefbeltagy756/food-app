@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="input-group mb-3">
+        <input type="text"  [(ngModel)]="searchString" (click)="removePlaceHolder()" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-prepend">
+            <button  (click)="search()" type="button" class="btn btn-outline-secondary">Search</button>
+          </div>
+      </div>
+</div>
+

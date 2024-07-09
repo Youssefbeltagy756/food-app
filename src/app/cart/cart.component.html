@@ -1,0 +1,64 @@
+<!-- <div class="padding-class">
+    <div class="container">
+    <ul *ngFor="let item of CartObjects">
+        <li>
+            {{item.name}}
+            <img src="{{item.imageUrl}}" alt="">
+            <button (click)="AlterQuantity(item,false)">-</button>
+            <span>{{item.QuantityOrdered}}</span>
+            <button (click)="AlterQuantity(item,true)" >+</button>
+            <button (click)="removeItem(item)">Remove Item</button>
+        </li>
+    </ul>
+    <p *ngIf="price!=0">Total Price: {{price}}</p>
+    <p *ngIf="price==0">Your Cart is empty</p>
+    <button [routerLink]="['/']" type="button" class="btn btn-danger">Back To Menu</button>
+</div>
+</div>
+
+ -->
+
+<div class="padding-class">
+
+ <table *ngIf="price!=0"  class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of CartObjects" >
+        <th scope="row"></th>
+        <td><img src="{{item.imageUrl}}" alt=""></td>
+        <td>
+            <div>
+                <h4>{{item.name}}</h4>
+                    <h6>
+                        <span>Price: {{item.price}} $</span>
+                    </h6>
+                    <h6>Quantity: 
+                        <span (click)="AlterQuantity(item,false)" class="badge rounded-pill bg-warning text-dark"> - </span>
+                        <span> {{item.QuantityOrdered}} </span>
+                        <span (click)="AlterQuantity(item,true)" class="badge rounded-pill bg-warning text-dark"> + </span>
+                    </h6>
+                    <h6>
+                        <span> Total: {{ (item.price) * (item.QuantityOrdered ?? 0) }} $</span>
+                    </h6>
+                    <h6>
+                        <button (click)="removeItem(item)" class="btn btn-danger">remove</button>
+                    </h6>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 *ngIf="price==0">Cart is Empty</h2>
+  <h3 *ngIf="price!=0">Total Price: {{price}} $</h3>
+  <div class="button-Container">
+    <button [routerLink]="['/']" type="button" class="btn btn-danger">Back To Menu</button>
+    <button *ngIf="price!=0" (click)="removeAllItems()" type="button" class="btn btn-warning">clear cart</button>
+  </div>
+</div> 
+

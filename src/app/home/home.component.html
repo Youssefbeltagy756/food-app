@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.min.js"></script>
+<div class="padding-class">
+    <app-search></app-search>
+    <app-tag></app-tag>
+    <ul >
+        <li *ngFor="let food of foodImgs">
+            <div class="card"  (click)="addToCart(food.name)">
+            <img src="{{ food.imageUrl }}" alt="">
+            <div style="font-weight: bold;">
+                {{food.name}}
+            </div>
+            <div>
+                Cook time: {{food.cookTime}}
+            </div>
+            <div>
+                Price: {{food.price}} $
+            </div>
+            <rating style=" 
+            color: orange;
+            line-height:2rem;
+            font-size: 150%;"
+             [readonly]="true" [(ngModel)]="food.stars" ></rating>
+            <div>
+                <span type="button" class="badge rounded-pill bg-dark text-white">get details</span>
+            </div>
+            </div>
+        </li>
+    </ul> 
+</div>

@@ -1,0 +1,22 @@
+.padding-class {
+    padding: 20px;
+}
+
+.padding-class ul {
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 0;
+    justify-content: center;
+    list-style-type: none; 
+}
+
+.padding-class li {
+    margin-right: 20px;
+    margin-bottom: 20px; 
+}
+
+.padding-class img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}

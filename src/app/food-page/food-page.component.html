@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="picture-div">
+    <img src="{{ FoodObject?.imageUrl }}" alt="">
+  </div>
+  <div class="details-div">
+    <h2>{{FoodObject.name}}</h2>
+    <h6>CookTime: {{FoodObject.cookTime}}</h6>
+    <h6>Price: {{FoodObject.price}}</h6>
+    <h6>Origins: 
+      <div class="container2">
+      <h6 *ngFor="let origin of FoodObject.origins">
+        <span class="badge rounded-pill bg-warning text-dark">{{origin}}</span>
+      </h6>
+    </div>
+    </h6>
+    <h6>Tags: 
+      <div class="container2">
+      <h6 *ngFor="let tag of FoodObject.tags">
+        <span class="badge rounded-pill bg-primary text-white">{{tag}}</span>
+      </h6>
+    </div>
+    </h6>
+    <h6>Rating: 
+      <rating style=" 
+      color: orange;
+      line-height:1rem;
+      font-size: 150%;
+      "
+      [readonly]="true" [(ngModel)]="FoodObject.stars" ></rating>
+    </h6>
+    <button [routerLink]="['/cart']" (click)="addToCart()" type="button" class="btn btn-danger">add to cart</button>
+  </div>
+</div>

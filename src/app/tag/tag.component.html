@@ -1,0 +1,8 @@
+<div class="container">
+    <h6 *ngFor="let food of FoodTagObject">
+        <div class="food-item">
+            <span (click)="search($event)" type="button" class="badge rounded-pill bg-warning text-dark">{{food.tagString}}<span> ({{food.QuantityAvailible}}) </span></span>
+        </div>
+    </h6>
+</div>
+

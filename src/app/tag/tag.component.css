@@ -1,0 +1,21 @@
+.container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.food-item{
+    margin: 5px;
+    transition: transform 0.4s ease; 
+}
+
+.food-item:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+
+
+
