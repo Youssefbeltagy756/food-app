@@ -1,4 +1,4 @@
-# Demo2
+# Food Delivery application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
 
